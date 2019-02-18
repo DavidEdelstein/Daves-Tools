@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavesTools", "DavesTools\DavesTools.csproj", "{7ABE7731-4613-4AF9-9464-753ECB1801F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DavesStockInventory", "DavesStockInventory\DavesStockInventory.csproj", "{40108699-7A0B-4195-B619-E36C88283B85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7ABE7731-4613-4AF9-9464-753ECB1801F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABE7731-4613-4AF9-9464-753ECB1801F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABE7731-4613-4AF9-9464-753ECB1801F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABE7731-4613-4AF9-9464-753ECB1801F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40108699-7A0B-4195-B619-E36C88283B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40108699-7A0B-4195-B619-E36C88283B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40108699-7A0B-4195-B619-E36C88283B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40108699-7A0B-4195-B619-E36C88283B85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B34A4165-6FBC-45CC-89AB-F63FC5CABD6F}
+	EndGlobalSection
+EndGlobal
