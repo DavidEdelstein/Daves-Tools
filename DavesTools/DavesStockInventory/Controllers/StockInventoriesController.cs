@@ -37,71 +37,7 @@ namespace DavesStockInventory.Controllers
             return Ok(stockInventory.Quantity);
         }
 
-        // PUT: api/StockInventories/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutStockInventory(int id, StockInventory stockInventory)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != stockInventory.ID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(stockInventory).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StockInventoryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
-        // POST: api/StockInventories
-        [ResponseType(typeof(StockInventory))]
-        public IHttpActionResult PostStockInventory(StockInventory stockInventory)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Stock.Add(stockInventory);
-            db.SaveChanges();
-
-            return CreatedAtRoute("DefaultApi", new { id = stockInventory.ID }, stockInventory);
-        }
-
-        // DELETE: api/StockInventories/5
-        [ResponseType(typeof(StockInventory))]
-        public IHttpActionResult DeleteStockInventory(int id)
-        {
-            StockInventory stockInventory = db.Stock.Find(id);
-            if (stockInventory == null)
-            {
-                return NotFound();
-            }
-
-            db.Stock.Remove(stockInventory);
-            db.SaveChanges();
-
-            return Ok(stockInventory);
-        }
+       
 
         protected override void Dispose(bool disposing)
         {

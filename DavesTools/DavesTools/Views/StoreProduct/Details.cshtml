@@ -46,28 +46,10 @@
 <div id="Stock">
 
 </div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-
-    <script language="javascript">
-    $(document).ready(function () {
-        $("#CheckStock").click(function () {
-
-            $.get("http://localhost:50743/api/StockInventories/@Model.ID",
-                function (data) {
-                    $("#Stock").html(data.Quantity);
-                });
-
-        });
-
-    });
-
-    </script>
-}
 
 <div class="text-success" id="results"></div>
 <button class="btn btn-default" id="OrderItem">Order Item</button>
-<div id="Stock">
+<div id="Order">
 
 </div>
 @section Scripts {
@@ -87,5 +69,21 @@
     });
 
     </script>
+
+    <script language="javascript">
+    $(document).ready(function () {
+        $("#OrderItem").click(function () {
+
+            $.post("http://localhost:50743/api/Orders", { ID: @Model.ItemId },
+                function (data) {
+                    $("#Order").html(data);
+                });
+
+        });
+
+    });
+
+    </script>
 }
+
 

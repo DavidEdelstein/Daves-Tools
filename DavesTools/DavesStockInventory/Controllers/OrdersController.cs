@@ -17,60 +17,7 @@ namespace DavesStockInventory.Controllers
     {
         private StockInventoryDbContext db = new StockInventoryDbContext();
 
-        // GET: api/Orders
-        public IQueryable<StockInventory> GetStock()
-        {
-            return db.Stock;
-        }
-
-        // GET: api/Orders/5
-        [ResponseType(typeof(StockInventory))]
-        public IHttpActionResult GetStockInventory(int id)
-        {
-            StockInventory stockInventory = db.Stock.Find(id);
-            if (stockInventory == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(stockInventory);
-        }
-
-        // PUT: api/Orders/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutStockInventory(int id, StockInventory stockInventory)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != stockInventory.ID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(stockInventory).State = EntityState.Modified;
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!StockInventoryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return StatusCode(HttpStatusCode.NoContent);
-        }
-
+       
         // POST: api/Orders
         [ResponseType(typeof(StockInventory))]
         public IHttpActionResult PostStockInventory(StockInventory stockInventory)
@@ -86,21 +33,6 @@ namespace DavesStockInventory.Controllers
             return CreatedAtRoute("DefaultApi", new { id = stockInventory.ID }, stockInventory);
         }
 
-        // DELETE: api/Orders/5
-        [ResponseType(typeof(StockInventory))]
-        public IHttpActionResult DeleteStockInventory(int id)
-        {
-            StockInventory stockInventory = db.Stock.Find(id);
-            if (stockInventory == null)
-            {
-                return NotFound();
-            }
-
-            db.Stock.Remove(stockInventory);
-            db.SaveChanges();
-
-            return Ok(stockInventory);
-        }
 
         protected override void Dispose(bool disposing)
         {
