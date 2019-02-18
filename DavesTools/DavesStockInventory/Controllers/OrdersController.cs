@@ -22,15 +22,17 @@ namespace DavesStockInventory.Controllers
         [ResponseType(typeof(StockInventory))]
         public IHttpActionResult PostStockInventory(StockInventory stockInventory)
         {
+            StockInventory DbStockInventory = db.Stock.Find(stockInventory.ID);
+            //
+            DbStockInventory.Quantity = DbStockInventory.Quantity - 1; 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Stock.Add(stockInventory);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = stockInventory.ID }, stockInventory);
+            return CreatedAtRoute("DefaultApi", new { id = DbStockInventory.ID }, DbStockInventory);
         }
 
 

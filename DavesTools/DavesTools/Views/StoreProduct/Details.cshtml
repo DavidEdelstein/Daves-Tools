@@ -61,7 +61,7 @@
 
             $.get("http://localhost:50743/api/StockInventories/@Model.ID",
                 function (data) {
-                    $("#Stock").html(data.Quantity);
+                    $("#Stock").html(data);
                 });
 
         });
